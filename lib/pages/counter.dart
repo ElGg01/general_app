@@ -8,22 +8,62 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
+  int _contador = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _contador++;
+    });
+  }
+
+  void _decrementCounter() {
+    setState(() {
+      _contador--;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Contador'),
-        backgroundColor: Colors.pinkAccent,
-        titleTextStyle: const TextStyle(
-            color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
-      ),
-      body: const Center(
-        child: Column(
-          children: [
-            Text('Página del contador'),
-          ],
+        appBar: AppBar(
+          title: const Text('Contador'),
+          backgroundColor: Colors.yellowAccent,
+          titleTextStyle: const TextStyle(
+              color: Colors.black, fontSize: 28, fontWeight: FontWeight.bold),
         ),
-      ),
-    );
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'El valor del contador es:',
+                style: TextStyle(fontSize: 24),
+              ),
+              Text(
+                '$_contador',
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              )
+            ],
+          ),
+        ),
+        floatingActionButton: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            FloatingActionButton(
+              heroTag: 'Plus',
+              onPressed: _incrementCounter,
+              tooltip: 'Incrementa el contador',
+              child: const Icon(Icons.add),
+            ),
+            const SizedBox(height: 20),
+            FloatingActionButton(
+              heroTag: 'Minus',
+              onPressed: _decrementCounter,
+              tooltip: 'Decrementa el contador',
+              child: const Icon(Icons.remove),
+            )
+          ],
+        ));
   }
 }
