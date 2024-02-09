@@ -13,17 +13,36 @@ class _CalculatorState extends State<Calculator> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Calculadora'),
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: Colors.black,
+        iconTheme: const IconThemeData(color: Colors.white),
         titleTextStyle: const TextStyle(
             color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
       ),
-      body: const Center(
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 5),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text('Página de la calculadora'),
+            SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Text(
+                      '0',
+                      style: TextStyle(color: Colors.white, fontSize: 80),
+                      textAlign: TextAlign.left,
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
+      backgroundColor: Colors.black,
     );
   }
 }

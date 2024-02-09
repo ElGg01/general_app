@@ -54,6 +54,7 @@ class _CounterState extends State<Counter> {
               heroTag: 'Plus',
               onPressed: _incrementCounter,
               tooltip: 'Incrementa el contador',
+              backgroundColor: Colors.greenAccent,
               child: const Icon(Icons.add),
             ),
             const SizedBox(height: 20),
@@ -61,6 +62,7 @@ class _CounterState extends State<Counter> {
               heroTag: 'Minus',
               onPressed: _decrementCounter,
               tooltip: 'Decrementa el contador',
+              backgroundColor: Colors.redAccent,
               child: const Icon(Icons.remove),
             )
           ],
