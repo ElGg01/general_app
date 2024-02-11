@@ -10,7 +10,9 @@ class Calculator extends StatefulWidget {
 class _CalculatorState extends State<Calculator> {
   Widget calcButton(String text, Color bgColor, Color textColor) {
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          calcular(text);
+        },
         style: ButtonStyle(
             shape: const MaterialStatePropertyAll(CircleBorder()),
             backgroundColor: MaterialStatePropertyAll(bgColor),
@@ -35,12 +37,12 @@ class _CalculatorState extends State<Calculator> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            const Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+            Row(mainAxisAlignment: MainAxisAlignment.end, children: [
               Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Text(
-                  '100+',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+                  '$operacionAnterior',
+                  style: const TextStyle(color: Colors.white, fontSize: 16),
                 ),
               )
             ]),
@@ -52,17 +54,17 @@ class _CalculatorState extends State<Calculator> {
                     //EN ESTE CHILD SOLO VA TEXT
                     child: SizedBox(
                         width: MediaQuery.of(context).size.width - 30,
-                        child: const Scrollbar(
+                        child: Scrollbar(
                           //thumbVisibility: true,
                           //trackVisibility: true,
                           child: SingleChildScrollView(
                             reverse: true,
-                            physics: AlwaysScrollableScrollPhysics(),
+                            physics: const AlwaysScrollableScrollPhysics(),
                             scrollDirection: Axis.horizontal,
                             child: Text(
                               //AGREGAR QUE EL SCROLL SE VAYA AL FINAL CUANDO SE BORRA UN NUMERO
-                              '1234567891234',
-                              style: TextStyle(
+                              '$numeroActual',
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 60,
                                   fontWeight: FontWeight.bold),
@@ -81,7 +83,7 @@ class _CalculatorState extends State<Calculator> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 calcButton('AC', Colors.deepPurple, Colors.white),
-                calcButton('%', Colors.deepPurple, Colors.white),
+                calcButton('x²', Colors.deepPurple, Colors.white),
                 calcButton('<-', Colors.deepPurple, Colors.white),
                 calcButton('/', Colors.redAccent, Colors.white),
               ],

@@ -13,7 +13,7 @@ class _AboutState extends State<About> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Acerca de'),
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: Colors.blueAccent,
         titleTextStyle: const TextStyle(
             color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
       ),
