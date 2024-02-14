@@ -16,29 +16,12 @@ class _HomePageState extends State<HomePage> {
         titleTextStyle: const TextStyle(
             color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           children: [
-            const SizedBox(height: 20),
-            const Text('Aplicaciones:',
+            SizedBox(height: 20),
+            Text('Bienvenido',
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 20),
-            ElevatedButton.icon(
-              onPressed: () {
-                Navigator.pushNamed(context, '/contador');
-              },
-              icon: const Icon(Icons.numbers),
-              label: const Text('Contador'),
-              style: ElevatedButton.styleFrom(),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton.icon(
-              onPressed: () {
-                Navigator.pushNamed(context, '/calculadora');
-              },
-              icon: const Icon(Icons.calculate),
-              label: const Text('Calculadora'),
-            )
           ],
         ),
       ),

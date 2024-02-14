@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:general_app/pages/about.dart';
 import 'package:general_app/pages/calculator.dart';
+import 'package:general_app/pages/get_into.dart';
 import 'pages/home_page.dart';
 import 'pages/counter.dart';
 
@@ -20,7 +21,7 @@ class _AppState extends State<App> {
     const HomePage(),
     const Counter(),
     const Calculator(),
-    const About(),
+    const GetInto(),
   ];
 
   void _onItemTapped(int index) {
@@ -37,7 +38,7 @@ class _AppState extends State<App> {
         '/inicio': (context) => const HomePage(),
         '/contador': (context) => const Counter(),
         '/calculadora': (context) => const Calculator(),
-        '/Acerca de': (context) => const About()
+        '/acerca de': (context) => const About()
       },
       home: Scaffold(
         body: _pagesOptions.elementAt(_selectedIndex),
