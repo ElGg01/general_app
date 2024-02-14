@@ -18,9 +18,9 @@ class _CalculatorState extends State<Calculator> {
             shape: const MaterialStatePropertyAll(CircleBorder()),
             backgroundColor: MaterialStatePropertyAll(bgColor),
             padding: const MaterialStatePropertyAll(EdgeInsets.all(20)),
-            minimumSize: const MaterialStatePropertyAll(Size(90, 100)),
+            minimumSize: const MaterialStatePropertyAll(Size(90, 80)),
             maximumSize: const MaterialStatePropertyAll(Size(90, 100))),
-        child: Text(text, style: TextStyle(fontSize: 35, color: textColor)));
+        child: Text(text, style: TextStyle(fontSize: 24, color: textColor)));
   }
 
   String numActualString = '0';
@@ -407,6 +407,9 @@ class _CalculatorState extends State<Calculator> {
                 calcButton('.', Colors.deepPurple, Colors.white),
                 calcButton('=', Colors.yellowAccent, Colors.black),
               ],
+            ),
+            const SizedBox(
+              height: 20,
             ),
           ],
         ),

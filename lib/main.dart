@@ -6,7 +6,60 @@ import 'pages/counter.dart';
 
 void main() => runApp(const App());
 
-class App extends StatelessWidget {
+class App extends StatefulWidget {
+  const App({super.key});
+
+  @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  int _selectedIndex = 0;
+
+  static final List<Widget> _pagesOptions = <Widget>[
+    const HomePage(),
+    const Counter(),
+    const Calculator(),
+    const About(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Material App',
+      routes: {
+        '/inicio': (context) => const HomePage(),
+        '/contador': (context) => const Counter(),
+        '/calculadora': (context) => const Calculator(),
+        '/Acerca de': (context) => const About()
+      },
+      home: Scaffold(
+        body: _pagesOptions.elementAt(_selectedIndex),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Inicio'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.numbers), label: 'Contador'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.calculate), label: 'Calculadora'),
+            BottomNavigationBarItem(icon: Icon(Icons.login), label: 'Ingresa')
+          ],
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+        ),
+      ),
+    );
+  }
+}
+
+/* class App extends StatelessWidget {
   const App({super.key});
   @override
   Widget build(BuildContext context) {
@@ -21,4 +74,4 @@ class App extends StatelessWidget {
       },
     );
   }
-}
+} */
