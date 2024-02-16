@@ -1,13 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class GetInto extends StatefulWidget {
-  const GetInto({super.key});
+  const GetInto({super.key, required this.home});
+
+  final Function home;
 
   @override
   State<GetInto> createState() => _GetIntoState();
 }
 
 class _GetIntoState extends State<GetInto> {
+  TextEditingController _textEditingController = TextEditingController();
+
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+
+  Future<void> _guardarNombre() async {
+    final SharedPreferences prefs = await _prefs;
+    if (prefs != Null) {
+      prefs.setString('nombre', _textEditingController.text);
+      setState(() {
+        _textEditingController.text = '';
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,14 +44,22 @@ class _GetIntoState extends State<GetInto> {
                 padding: const EdgeInsets.all(50),
                 child: Column(
                   children: [
-                    const TextField(
+                    TextField(
                       //obscureText: true,
-                      decoration: InputDecoration(
+                      onSubmitted: (value) {
+                        _guardarNombre();
+                        widget.home(0);
+                      },
+                      controller: _textEditingController,
+                      decoration: const InputDecoration(
                           border: OutlineInputBorder(), labelText: 'Nombre:'),
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _guardarNombre();
+                        widget.home(0);
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.red,
                           foregroundColor: Colors.white),

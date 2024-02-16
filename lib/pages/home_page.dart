@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -7,6 +8,27 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+
+  String _mensaje = 'Bienvenida';
+  String _nombre = '';
+
+  Future<void> _getNombre() async {
+    final SharedPreferences prefs = await _prefs;
+    if (prefs != Null) {
+      setState(() {
+        _nombre = (prefs.getString('nombre') ?? '');
+        _mensaje = 'Bienvenid@ $_nombre';
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _getNombre();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,11 +38,11 @@ class _HomePageState extends State<HomePage> {
         titleTextStyle: const TextStyle(
             color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           children: [
             SizedBox(height: 20),
-            Text('Bienvenido',
+            Text(_mensaje,
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
           ],
         ),

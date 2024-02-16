@@ -21,8 +21,19 @@ class _AppState extends State<App> {
     const HomePage(),
     const Counter(),
     const Calculator(),
-    const GetInto(),
   ];
+
+  void _home(int n) {
+    setState(() {
+      _selectedIndex = n;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _pagesOptions.add(GetInto(home: _home));
+  }
 
   void _onItemTapped(int index) {
     setState(() {
