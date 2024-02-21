@@ -64,10 +64,10 @@ class _CalculatorState extends State<Calculator> {
   void calcular(String textoBoton) {
     switch (textoBoton) {
       case '+':
-        print('Se ejecuto un +');
+        //print('Se ejecuto un +');
         if (operacion != '+') {
           setState(() {
-            print('NO es una suma');
+            //print('NO es una suma');
             if (operacion == '') {
               operando1 = double.parse(numActualString);
             }
@@ -81,7 +81,7 @@ class _CalculatorState extends State<Calculator> {
           });
         } else {
           setState(() {
-            print('SI es una suma');
+            //print('SI es una suma');
             operacionTemporal = (operando1) + (double.parse(numActualString));
             operando1 = operacionTemporal;
             preview = '$operacionTemporal $operacion';
@@ -90,10 +90,10 @@ class _CalculatorState extends State<Calculator> {
         }
         break;
       case '-':
-        print('Se ejecuto un -');
+        //print('Se ejecuto un -');
         if (operacion != '-') {
           setState(() {
-            print('NO es una resta');
+            //print('NO es una resta');
             if (operacion == '') {
               operando1 = double.parse(numActualString);
             }
@@ -107,7 +107,7 @@ class _CalculatorState extends State<Calculator> {
           });
         } else {
           setState(() {
-            print('SI es una resta');
+            //print('SI es una resta');
             operacionTemporal = (operando1) - (double.parse(numActualString));
             operando1 = operacionTemporal;
             preview = '$operacionTemporal $operacion';
@@ -116,10 +116,10 @@ class _CalculatorState extends State<Calculator> {
         }
         break;
       case '*':
-        print('Se ejecuto un *');
+        //print('Se ejecuto un *');
         if (operacion != '*') {
           setState(() {
-            print('NO es una multi');
+            //print('NO es una multi');
             if (operacion == '') {
               operando1 = double.parse(numActualString);
             }
@@ -133,7 +133,7 @@ class _CalculatorState extends State<Calculator> {
           });
         } else {
           setState(() {
-            print('SI es una multi');
+            //print('SI es una multi');
             operacionTemporal = (operando1) * (double.parse(numActualString));
             operando1 = operacionTemporal;
             preview = '$operacionTemporal $operacion';
@@ -142,10 +142,10 @@ class _CalculatorState extends State<Calculator> {
         }
         break;
       case '/':
-        print('Se ejecuto un /');
+        //print('Se ejecuto un /');
         if (operacion != '/') {
           setState(() {
-            print('NO es una division');
+            //print('NO es una division');
             if (operacion == '') {
               operando1 = double.parse(numActualString);
             }
@@ -159,14 +159,14 @@ class _CalculatorState extends State<Calculator> {
           });
         } else {
           setState(() {
-            print('SI es una division');
+            //print('SI es una division');
             if (double.parse(numActualString) != 0.0) {
               operacionTemporal = (operando1) / (double.parse(numActualString));
               operando1 = operacionTemporal;
               preview = '$operacionTemporal $operacion';
               numActualString = '0';
             } else {
-              print('Error de division');
+              //print('Error de division');
               setState(() {
                 numActualString = 'Error';
               });
@@ -187,7 +187,7 @@ class _CalculatorState extends State<Calculator> {
         }
         break;
       case 'AC':
-        print('Se ejecuto un AC');
+        //print('Se ejecuto un AC');
         setState(() {
           numActualString = '0';
           operando1;
@@ -205,13 +205,13 @@ class _CalculatorState extends State<Calculator> {
         });
         break;
       case 'e':
-        print('Se ejecuto un e');
+        //print('Se ejecuto un e');
         setState(() {
           numActualString = e.toString();
         });
         break;
       case '<-':
-        print('Se ejecuto un <-');
+        //print('Se ejecuto un <-');
         if (numActualString.length > 1 && igual == false) {
           setState(() {
             numActualString =
@@ -224,13 +224,13 @@ class _CalculatorState extends State<Calculator> {
         }
         break;
       case 'π':
-        print('Se ejecuto un π');
+        //print('Se ejecuto un π');
         setState(() {
           numActualString = pi.toString();
         });
         break;
       case '.':
-        print('Se ejecuto un .');
+        //print('Se ejecuto un .');
         if (contadorPuntos == 0) {
           setState(() {
             numActualString += textoBoton;
@@ -239,7 +239,7 @@ class _CalculatorState extends State<Calculator> {
         }
         break;
       case '=':
-        print('Se ejecuto un =');
+        //print('Se ejecuto un =');
         resultado = operando1 = ejecutarOperacion(
             operacion, operando1, double.parse(numActualString));
         if (resultado != null) {
@@ -275,7 +275,7 @@ class _CalculatorState extends State<Calculator> {
         }
         break;
       default:
-        print('Numero presionado');
+        //print('Numero presionado');
         //Comprobacion para que no haya 0 al inicio
         if (igual) {
           setState(() {
@@ -313,7 +313,7 @@ class _CalculatorState extends State<Calculator> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Text(
-                  '$preview',
+                  preview,
                   style: const TextStyle(color: Colors.white, fontSize: 16),
                 ),
               )
@@ -335,7 +335,7 @@ class _CalculatorState extends State<Calculator> {
                             scrollDirection: Axis.horizontal,
                             child: Text(
                               //AGREGAR QUE EL SCROLL SE VAYA AL FINAL CUANDO SE BORRA UN NUMERO
-                              '$numActualString',
+                              numActualString,
                               style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 60,

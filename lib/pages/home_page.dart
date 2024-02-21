@@ -41,9 +41,10 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(_mensaje,
-                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
+                style:
+                    const TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
           ],
         ),
       ),

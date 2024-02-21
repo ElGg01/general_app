@@ -6,7 +6,15 @@ import 'pages/home_page.dart';
 import 'pages/counter.dart';
 import 'pages/map.dart';
 
-void main() => runApp(const App());
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+void main() async {
+  runApp(const App());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+}
 
 class App extends StatefulWidget {
   const App({super.key});
