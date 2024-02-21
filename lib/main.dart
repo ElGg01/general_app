@@ -4,6 +4,7 @@ import 'package:general_app/pages/calculator.dart';
 import 'package:general_app/pages/get_into.dart';
 import 'pages/home_page.dart';
 import 'pages/counter.dart';
+import 'pages/map.dart';
 
 void main() => runApp(const App());
 
@@ -21,6 +22,7 @@ class _AppState extends State<App> {
     const HomePage(),
     const Counter(),
     const Calculator(),
+    const Map(),
   ];
 
   void _home(int n) {
@@ -61,6 +63,7 @@ class _AppState extends State<App> {
                 icon: Icon(Icons.numbers), label: 'Contador'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.calculate), label: 'Calculadora'),
+            BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Mapa'),
             BottomNavigationBarItem(icon: Icon(Icons.login), label: 'Ingresa')
           ],
           currentIndex: _selectedIndex,
