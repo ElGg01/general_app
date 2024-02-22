@@ -50,16 +50,22 @@ class _MapState extends State<Map> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Página Principal'),
-        backgroundColor: Colors.pinkAccent,
+        title: const Text('Mapa'),
+        backgroundColor: Colors.green,
         titleTextStyle: const TextStyle(
             color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
       ),
       body: Center(
           child: Column(
         children: [
-          Text('latitud $latitud'),
-          Text('longitud: $longitud'),
+          Text(
+            'latitud: $latitud',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Text(
+            'longitud: $longitud',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
           MaterialButton(
             onPressed: () {
               botonPresionado();
