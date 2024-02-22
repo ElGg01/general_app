@@ -231,11 +231,17 @@ class _CalculatorState extends State<Calculator> {
         break;
       case '.':
         //print('Se ejecuto un .');
-        if (contadorPuntos == 0) {
+        if (contadorPuntos == 0 && igual == false) {
           setState(() {
             numActualString += textoBoton;
           });
           contadorPuntos++;
+        } else {
+          contadorPuntos++;
+          igual = false;
+          setState(() {
+            numActualString = '0$textoBoton';
+          });
         }
         break;
       case '=':
