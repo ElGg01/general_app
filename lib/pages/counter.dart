@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Counter extends StatefulWidget {
   const Counter({super.key});
@@ -8,18 +9,39 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
+  final db = FirebaseFirestore.instance;
+
+  void leerDatos() async {
+    await db.collection("numeros").doc('n0').get().then((documento) {
+      setState(() {
+        _contador = documento.get('contador');
+      });
+    });
+  }
+
+  void escribirDatos() async {
+    await db.collection('numeros').doc('n0').set({'contador': _contador});
+  }
+
+  @override
+  void initState() {
+    leerDatos();
+  }
+
   int _contador = 0;
 
   void _incrementCounter() {
     setState(() {
       _contador++;
     });
+    escribirDatos();
   }
 
   void _decrementCounter() {
     setState(() {
       _contador--;
     });
+    escribirDatos();
   }
 
   @override
