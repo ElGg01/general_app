@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:general_app/pages/about.dart';
 import 'package:general_app/pages/calculator.dart';
+import 'package:general_app/pages/calendar.dart';
 import 'package:general_app/pages/get_into.dart';
 import 'pages/home_page.dart';
 import 'pages/counter.dart';
@@ -31,6 +32,7 @@ class _AppState extends State<App> {
     const Counter(),
     const Calculator(),
     const Map(),
+    const Calendar()
   ];
 
   void _home(int n) {
@@ -72,7 +74,9 @@ class _AppState extends State<App> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.calculate), label: 'Calculadora'),
             BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Mapa'),
-            BottomNavigationBarItem(icon: Icon(Icons.login), label: 'Ingresa')
+            BottomNavigationBarItem(
+                icon: Icon(Icons.calendar_month), label: 'Calendario'),
+            BottomNavigationBarItem(icon: Icon(Icons.login), label: 'Ingresa'),
           ],
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
