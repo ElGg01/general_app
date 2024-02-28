@@ -57,20 +57,26 @@ class _MapState extends State<Map> {
       ),
       body: Center(
           child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            'latitud: $latitud',
-            style: TextStyle(fontWeight: FontWeight.bold),
+          const Text(
+            'Latitud:',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
           ),
-          Text(
-            'longitud: $longitud',
-            style: TextStyle(fontWeight: FontWeight.bold),
+          Text(latitud, style: const TextStyle(fontSize: 32)),
+          const Text(
+            'Longitud:',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
           ),
+          Text(longitud, style: const TextStyle(fontSize: 32)),
+          const SizedBox(height: 20),
           MaterialButton(
             onPressed: () {
               botonPresionado();
             },
-            child: const Text('Obtener ubicacion'),
+            color: Colors.amberAccent,
+            child:
+                const Text('Obtener ubicacion', style: TextStyle(fontSize: 16)),
           )
         ],
       )),
