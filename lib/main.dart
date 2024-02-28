@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:general_app/pages/about.dart';
-import 'package:general_app/pages/addEvent.dart';
+import 'package:general_app/pages/add_event.dart';
 import 'package:general_app/pages/calculator.dart';
 import 'package:general_app/pages/calendar.dart';
 import 'package:general_app/pages/get_into.dart';

@@ -11,7 +11,7 @@ class GetInto extends StatefulWidget {
 }
 
 class _GetIntoState extends State<GetInto> {
-  TextEditingController _textEditingController = TextEditingController();
+  final TextEditingController _textEditingController = TextEditingController();
 
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
@@ -38,7 +38,7 @@ class _GetIntoState extends State<GetInto> {
         child: Column(
           children: [
             const SizedBox(height: 20),
-            const Text('Ingresa tus datos:',
+            const Text('Ingresa tu nombre:',
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
             Padding(
                 padding: const EdgeInsets.all(50),

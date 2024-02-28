@@ -25,6 +25,7 @@ class _CounterState extends State<Counter> {
 
   @override
   void initState() {
+    super.initState();
     leerDatos();
   }
 

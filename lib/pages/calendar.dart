@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class Calendar extends StatefulWidget {
   const Calendar({super.key});
@@ -38,7 +37,7 @@ class _CalendarState extends State<Calendar> {
     _cargarDatos();
   }
 
-  List<Meeting> _getDataSource() {
+/*   List<Meeting> _getDataSource() {
     final List<Meeting> meetings = <Meeting>[];
     final DateTime today = DateTime.now();
     final DateTime startTime = DateTime(2024, 3, 1, 7, 0, 0);
@@ -48,7 +47,7 @@ class _CalendarState extends State<Calendar> {
     meetings.add(Meeting('Pollo', DateTime(2024, 2, 28, 15, 0, 0),
         DateTime(2024, 2, 28, 19, 0, 0), const Color(0xFF440044), false));
     return meetings;
-  }
+  } */
 
   @override
   Widget build(BuildContext context) {
