@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:general_app/pages/about.dart';
+import 'package:general_app/pages/addEvent.dart';
 import 'package:general_app/pages/calculator.dart';
 import 'package:general_app/pages/calendar.dart';
 import 'package:general_app/pages/get_into.dart';
@@ -61,7 +62,8 @@ class _AppState extends State<App> {
         '/inicio': (context) => const HomePage(),
         '/contador': (context) => const Counter(),
         '/calculadora': (context) => const Calculator(),
-        '/acerca de': (context) => const About()
+        '/acerca de': (context) => const About(),
+        '/Agregar evento': (context) => const AddEvent()
       },
       home: Scaffold(
         body: _pagesOptions.elementAt(_selectedIndex),

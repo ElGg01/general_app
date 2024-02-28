@@ -68,6 +68,12 @@ class _CalendarState extends State<Calendar> {
           dataSource: MeetingDataSource(meetings),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/Agregar evento');
+          },
+          heroTag: 'Agregar',
+          child: const Icon(Icons.add)),
     );
   }
 }
