@@ -27,7 +27,7 @@ class _AddEventState extends State<AddEvent> {
   final TextEditingController _nombreEvento = TextEditingController();
   final TextEditingController _inicioEvento = TextEditingController();
   final TextEditingController _finEvento = TextEditingController();
-  final TextEditingController _colorEvento = TextEditingController();
+  //final TextEditingController _colorEvento = TextEditingController();
 
   @override
   void initState() {
@@ -120,7 +120,8 @@ class _AddEventState extends State<AddEvent> {
                         labelText: 'Fecha de inicio:'),
                     onTap: () {
                       DatePicker.showDateTimePicker(context,
-                          showTitleActions: true, onChanged: (dateTime) {
+                          showTitleActions: true,
+                          locale: LocaleType.es, onChanged: (dateTime) {
                         print('Fecha y hora seleccionada: $dateTime');
                       }, onConfirm: (dateTime) {
                         setState(() {
@@ -139,7 +140,8 @@ class _AddEventState extends State<AddEvent> {
                         labelText: 'Fecha de final:'),
                     onTap: () {
                       DatePicker.showDateTimePicker(context,
-                          showTitleActions: true, onChanged: (dateTime) {
+                          showTitleActions: true,
+                          locale: LocaleType.es, onChanged: (dateTime) {
                         print('Fecha y hora seleccionada: $dateTime');
                       }, onConfirm: (dateTime) {
                         setState(() {
@@ -191,6 +193,7 @@ class _AddEventState extends State<AddEvent> {
                   ElevatedButton(
                       onPressed: () {
                         _cargarDatos();
+                        Navigator.pop(context);
                       },
                       child: const Text('Agregar'))
                 ],
