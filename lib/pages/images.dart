@@ -24,14 +24,22 @@ class _ImagesState extends State<Images> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ImagenClickeable(
-              alto: 300,
-              ancho: 300,
+              alto: 200,
+              ancho: 200,
               ruta: 'assets/gatos/gato.png',
               accion: () {
                 print('Imagen clickeada desde un componente');
               }),
+          ImagenClickeable(
+              alto: 200,
+              ancho: 200,
+              ruta:
+                  'https://www.pixground.com/agent-neon-valorant-4k-wallpaper-3/?download-img=4k',
+              accion: () {
+                print('Imagen clickeada desde un componente');
+              }),
           SizedBox(
-            height: 300,
+            height: 200,
             child: MaterialButton(
                 onPressed: () {
                   print('Se preciono el gato enojado');

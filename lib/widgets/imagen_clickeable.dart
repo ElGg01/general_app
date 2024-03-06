@@ -27,7 +27,9 @@ class _ImagenClickeableState extends State<ImagenClickeable> {
       width: widget.ancho,
       child: MaterialButton(
         onPressed: widget.accion,
-        child: Image.asset(widget.ruta),
+        child: widget.ruta.startsWith('http')
+            ? Image.network(widget.ruta)
+            : Image.asset(widget.ruta),
       ),
     );
   }
