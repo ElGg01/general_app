@@ -4,6 +4,7 @@ import 'package:general_app/pages/add_event.dart';
 import 'package:general_app/pages/calculator.dart';
 import 'package:general_app/pages/calendar.dart';
 import 'package:general_app/pages/get_into.dart';
+import 'package:general_app/pages/images.dart';
 import 'pages/home_page.dart';
 import 'pages/counter.dart';
 import 'pages/map.dart';
@@ -33,7 +34,8 @@ class _AppState extends State<App> {
     const Counter(),
     const Calculator(),
     const Map(),
-    const Calendar()
+    const Calendar(),
+    const Images()
   ];
 
   void _home(int n) {
@@ -78,6 +80,8 @@ class _AppState extends State<App> {
             BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Mapa'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.calendar_month), label: 'Calendario'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.image), label: 'Imagenes'),
             BottomNavigationBarItem(icon: Icon(Icons.login), label: 'Ingresa'),
           ],
           currentIndex: _selectedIndex,
