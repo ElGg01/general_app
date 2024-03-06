@@ -80,8 +80,7 @@ class _AppState extends State<App> {
             BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Mapa'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.calendar_month), label: 'Calendario'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.image), label: 'Imagenes'),
+            BottomNavigationBarItem(icon: Icon(Icons.image), label: 'Imagenes'),
             BottomNavigationBarItem(icon: Icon(Icons.login), label: 'Ingresa'),
           ],
           currentIndex: _selectedIndex,

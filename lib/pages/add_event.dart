@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+//import 'package:general_app/main.dart';
 
 class AddEvent extends StatefulWidget {
   const AddEvent({super.key});
@@ -195,6 +196,11 @@ class _AddEventState extends State<AddEvent> {
                         _cargarDatos();
                         //Navigator.pop(context);
                         Navigator.popAndPushNamed(context, "/");
+                        //Navigator.pushReplacementNamed(context, "/");
+                        /* Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const App())); */
                       },
                       child: const Text('Agregar'))
                 ],
