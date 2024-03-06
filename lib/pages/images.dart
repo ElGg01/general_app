@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 class Images extends StatefulWidget {
@@ -47,7 +45,10 @@ class _ImagesState extends State<Images> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Imagenes'),
+        title: const Text(
+          'Imágenes',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+        ),
         backgroundColor: Colors.amber,
       ),
       body: Center(
