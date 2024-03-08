@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:general_app/widgets/imagen_clickeable.dart';
 import 'package:general_app/widgets/images_list.dart';
 
 class Images extends StatefulWidget {
@@ -12,9 +11,38 @@ class Images extends StatefulWidget {
 class _ImagesState extends State<Images> {
   @override
   Widget build(BuildContext context) {
-    return ImagesList(
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'Imágenes',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+          ),
+          backgroundColor: Colors.amber,
+        ),
+        body: const Center(
+          child: ImagesList(listImages: [
+            'assets/gatos/gato.png',
+            'assets/gatos/gato.png',
+            'assets/gatos/gato.png',
+            'assets/gatos/gato.png',
+            'assets/gatos/gato.png',
+            'assets/gatos/gato.png',
+            'assets/gatos/gato.png',
+            'assets/gatos/gato.png'
+          ], listDescriptions: [
+            'IMG 1',
+            'IMG 2',
+            'IMG 3',
+            'IMG 4',
+            'IMG 5',
+            'IMG 6',
+            'IMG 7',
+            'IMG 8'
+          ]),
+        ));
+    /* return const ImagesList(
         listImages: ['assets/gatos/gato.png', 'assets/gatos/gato.png'],
-        listDescriptions: ['Neon 1', 'Neon 2']);
+        listDescriptions: ['Neon 1', 'Neon 2']); */
 /*     return Scaffold(
       appBar: AppBar(
         title: const Text(
