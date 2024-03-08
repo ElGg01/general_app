@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:general_app/widgets/imagen_clickeable.dart';
+import 'package:general_app/widgets/images_list.dart';
 
 class Images extends StatefulWidget {
   const Images({super.key});
@@ -11,7 +12,10 @@ class Images extends StatefulWidget {
 class _ImagesState extends State<Images> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ImagesList(
+        listImages: ['assets/gatos/gato.png', 'assets/gatos/gato.png'],
+        listDescriptions: ['Neon 1', 'Neon 2']);
+/*     return Scaffold(
       appBar: AppBar(
         title: const Text(
           'Imágenes',
@@ -47,8 +51,15 @@ class _ImagesState extends State<Images> {
                 child: Image.network(
                     'https://static.nationalgeographic.es/files/styles/image_3200/public/75552.ngsversion.1422285553360.jpg?w=1600&h=1067')),
           ),
+          ImagesList(listImages: [
+            'https://www.pixground.com/agent-neon-valorant-4k-wallpaper-3/?download-img=4k',
+            'https://www.pixground.com/agent-neon-valorant-4k-wallpaper-3/?download-img=4k'
+          ], listDescriptions: [
+            'Neon 1',
+            'Neon 2'
+          ])
         ],
       )),
-    );
+    ); */
   }
 }
