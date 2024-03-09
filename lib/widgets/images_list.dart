@@ -28,10 +28,10 @@ class _ImagesListState extends State<ImagesList> {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Colors.grey[300],
+            color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.amber.withOpacity(0.8), // Color de la sombra
+                color: Colors.grey.withOpacity(0.8), // Color de la sombra
                 spreadRadius: 5, // Radio de propagación de la sombra
                 blurRadius: 7, // Radio de desenfoque de la sombra
                 offset: const Offset(0, 3), // Cambio de posición de la sombra
@@ -43,7 +43,7 @@ class _ImagesListState extends State<ImagesList> {
               Padding(
                   padding: const EdgeInsets.all(20),
                   child: Container(
-                    decoration: BoxDecoration(
+                    /* decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey
@@ -54,7 +54,7 @@ class _ImagesListState extends State<ImagesList> {
                               0, 3), // Cambio de posición de la sombra
                         ),
                       ],
-                    ),
+                    ), */
                     child: Image.asset(
                       widget.listImages[i],
                     ),
