@@ -17,10 +17,43 @@ class _AboutState extends State<About> {
         titleTextStyle: const TextStyle(
             color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
       ),
-      body: const Center(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            Text('Página de acerca de'),
+            Container(
+              padding: const EdgeInsets.all(10),
+              alignment: Alignment.center,
+              child: const Text(
+                "Aplicación General desarrollada por:",
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              alignment: Alignment.center,
+              child: const Text(
+                "Julio César Negrete Gutiérrez",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              alignment: Alignment.center,
+              child: const Text(
+                "Esta aplicación contiene varias funciones tipicas de las aplicaciones comerciales y con conexión a Firebase.",
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
           ],
         ),
       ),

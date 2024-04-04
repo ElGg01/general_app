@@ -52,7 +52,9 @@ class _GetIntoState extends State<GetInto> {
                       },
                       controller: _textEditingController,
                       decoration: const InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'Nombre:'),
+                        border: OutlineInputBorder(),
+                        labelText: 'Nombre:',
+                      ),
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(

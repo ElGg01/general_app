@@ -17,10 +17,10 @@ class _CalculatorState extends State<Calculator> {
         style: ButtonStyle(
             shape: const MaterialStatePropertyAll(CircleBorder()),
             backgroundColor: MaterialStatePropertyAll(bgColor),
-            padding: const MaterialStatePropertyAll(EdgeInsets.all(20)),
-            minimumSize: const MaterialStatePropertyAll(Size(90, 80)),
-            maximumSize: const MaterialStatePropertyAll(Size(90, 100))),
-        child: Text(text, style: TextStyle(fontSize: 24, color: textColor)));
+            padding: const MaterialStatePropertyAll(EdgeInsets.all(10)),
+            minimumSize: const MaterialStatePropertyAll(Size(70, 80)),
+            maximumSize: const MaterialStatePropertyAll(Size(70, 80))),
+        child: Text(text, style: TextStyle(fontSize: 18, color: textColor)));
   }
 
   String numActualString = '0';
@@ -64,6 +64,9 @@ class _CalculatorState extends State<Calculator> {
   void calcular(String textoBoton) {
     switch (textoBoton) {
       case '+':
+        if (numActualString == "Error") {
+          break;
+        }
         //print('Se ejecuto un +');
         if (operacion != '+') {
           setState(() {
@@ -77,6 +80,7 @@ class _CalculatorState extends State<Calculator> {
             }
             operacion = '+';
             preview = '$operando1 $operacion';
+            contadorPuntos = 0;
             numActualString = '0';
           });
         } else {
@@ -85,12 +89,16 @@ class _CalculatorState extends State<Calculator> {
             operacionTemporal = (operando1) + (double.parse(numActualString));
             operando1 = operacionTemporal;
             preview = '$operacionTemporal $operacion';
+            contadorPuntos = 0;
             numActualString = '0';
           });
         }
         break;
       case '-':
         //print('Se ejecuto un -');
+        if (numActualString == "Error") {
+          break;
+        }
         if (operacion != '-') {
           setState(() {
             //print('NO es una resta');
@@ -103,6 +111,7 @@ class _CalculatorState extends State<Calculator> {
             }
             operacion = '-';
             preview = '$operando1 $operacion';
+            contadorPuntos = 0;
             numActualString = '0';
           });
         } else {
@@ -111,11 +120,15 @@ class _CalculatorState extends State<Calculator> {
             operacionTemporal = (operando1) - (double.parse(numActualString));
             operando1 = operacionTemporal;
             preview = '$operacionTemporal $operacion';
+            contadorPuntos = 0;
             numActualString = '0';
           });
         }
         break;
       case '*':
+        if (numActualString == "Error") {
+          break;
+        }
         //print('Se ejecuto un *');
         if (operacion != '*') {
           setState(() {
@@ -129,6 +142,7 @@ class _CalculatorState extends State<Calculator> {
             }
             operacion = '*';
             preview = '$operando1 $operacion';
+            contadorPuntos = 0;
             numActualString = '0';
           });
         } else {
@@ -137,11 +151,15 @@ class _CalculatorState extends State<Calculator> {
             operacionTemporal = (operando1) * (double.parse(numActualString));
             operando1 = operacionTemporal;
             preview = '$operacionTemporal $operacion';
+            contadorPuntos = 0;
             numActualString = '0';
           });
         }
         break;
       case '/':
+        if (numActualString == "Error") {
+          break;
+        }
         //print('Se ejecuto un /');
         if (operacion != '/') {
           setState(() {
@@ -155,21 +173,24 @@ class _CalculatorState extends State<Calculator> {
             }
             operacion = '/';
             preview = '$operando1 $operacion';
+            contadorPuntos = 0;
             numActualString = '0';
           });
         } else {
-          setState(() {
-            //print('SI es una division');
-            if (double.parse(numActualString) != 0.0) {
+          //print('SI es una division');
+          if (double.parse(numActualString) != 0.0) {
+            setState(() {
               operacionTemporal = (operando1) / (double.parse(numActualString));
               operando1 = operacionTemporal;
               preview = '$operacionTemporal $operacion';
+              contadorPuntos = 0;
               numActualString = '0';
-            } else {
-              //print('Error de division');
-              setState(() {
-                numActualString = 'Error';
-              });
+            });
+          } else {
+            //print('Error de division');
+            setState(() {
+              numActualString = 'Error';
+
               operando1;
               operacionTemporal = 0;
 
@@ -182,8 +203,9 @@ class _CalculatorState extends State<Calculator> {
               resultado = 0;
 
               igual = true;
-            }
-          });
+            });
+            numActualString = '0';
+          }
         }
         break;
       case 'AC':
@@ -208,6 +230,7 @@ class _CalculatorState extends State<Calculator> {
         //print('Se ejecuto un e');
         setState(() {
           numActualString = e.toString();
+          contadorPuntos++;
         });
         break;
       case '<-':
@@ -227,6 +250,7 @@ class _CalculatorState extends State<Calculator> {
         //print('Se ejecuto un π');
         setState(() {
           numActualString = pi.toString();
+          contadorPuntos++;
         });
         break;
       case '.':
@@ -246,6 +270,9 @@ class _CalculatorState extends State<Calculator> {
         break;
       case '=':
         //print('Se ejecuto un =');
+        if (numActualString == "Error") {
+          break;
+        }
         resultado = operando1 = ejecutarOperacion(
             operacion, operando1, double.parse(numActualString));
         if (resultado != null) {
