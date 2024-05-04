@@ -204,7 +204,7 @@ class _CalculatorState extends State<Calculator> {
 
               igual = true;
             });
-            numActualString = '0';
+            numActualString = 'Error';
           }
         }
         break;
