@@ -40,6 +40,7 @@ class _MapState extends State<Map> {
 
   void botonPresionado() async {
     ubicacion = await obtenerUbicacion();
+    if (!mounted) return;
     setState(() {
       latitud = ubicacion.latitude.toString();
       longitud = ubicacion.longitude.toString();

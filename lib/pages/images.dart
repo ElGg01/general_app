@@ -22,13 +22,13 @@ class _ImagesState extends State<Images> {
         body: const Center(
           child: ImagesList(listImages: [
             'assets/gatos/gato.png',
-            'assets/gatos/gato.png',
-            'assets/gatos/gato.png',
-            'assets/gatos/gato.png',
-            'assets/gatos/gato.png',
-            'assets/gatos/gato.png',
-            'assets/gatos/gato.png',
-            'assets/gatos/gato.png'
+            'assets/gatos/gatoEnojao.jpg',
+            'assets/gatos/gatoChilling.png',
+            'assets/gatos/gatoSorprendido.jpg',
+            'assets/gatos/gatoTriste.png',
+            'assets/gatos/gatoCrudo.png',
+            'assets/gatos/gatoAcostado.png',
+            'assets/gatos/gatoChollis.png'
           ], listDescriptions: [
             'IMG 1',
             'IMG 2',

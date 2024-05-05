@@ -25,6 +25,7 @@ class _CalendarState extends State<Calendar> {
         final color = Color(datos['Color']);
         m.add(Meeting(nombre, inicio, fin, color, false));
       }
+      if (!mounted) return;
       setState(() {
         meetings = m;
       });

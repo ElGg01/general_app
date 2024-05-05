@@ -31,6 +31,7 @@ class _AboutState extends State<About> {
                 textAlign: TextAlign.center,
               ),
             ),
+            Image.asset("assets/NewLogo.png"),
             Container(
               padding: const EdgeInsets.all(10),
               alignment: Alignment.center,

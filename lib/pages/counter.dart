@@ -13,6 +13,7 @@ class _CounterState extends State<Counter> {
 
   void leerDatos() async {
     await db.collection("numeros").doc('n0').get().then((documento) {
+      if (!mounted) return;
       setState(() {
         _contador = documento.get('contador');
       });
