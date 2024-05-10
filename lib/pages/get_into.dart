@@ -41,37 +41,39 @@ class _GetIntoState extends State<GetInto> {
             const Text('Ingresa tu nombre:',
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
             Padding(
-                padding: const EdgeInsets.all(50),
-                child: Column(
-                  children: [
-                    TextField(
-                      //obscureText: true,
-                      onSubmitted: (value) {
-                        _guardarNombre();
-                        widget.home(0);
-                      },
-                      controller: _textEditingController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Nombre:',
-                      ),
+              padding: const EdgeInsets.all(50),
+              child: Column(
+                children: [
+                  TextField(
+                    //obscureText: true,
+                    onSubmitted: (value) {
+                      _guardarNombre();
+                      widget.home(0);
+                    },
+                    controller: _textEditingController,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Nombre:',
                     ),
-                    const SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {
-                        _guardarNombre();
-                        widget.home(0);
-                      },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red,
-                          foregroundColor: Colors.white),
-                      child: const Text(
-                        'Enviar',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    )
-                  ],
-                ))
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      _guardarNombre();
+                      widget.home(0);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      foregroundColor: Colors.white,
+                    ),
+                    child: const Text(
+                      'Enviar',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

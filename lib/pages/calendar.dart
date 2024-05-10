@@ -38,18 +38,6 @@ class _CalendarState extends State<Calendar> {
     _cargarDatos();
   }
 
-/*   List<Meeting> _getDataSource() {
-    final List<Meeting> meetings = <Meeting>[];
-    final DateTime today = DateTime.now();
-    final DateTime startTime = DateTime(2024, 3, 1, 7, 0, 0);
-    final DateTime endTime = startTime.add(const Duration(days: 2));
-    meetings.add(
-        Meeting('Paro', startTime, endTime, const Color(0xFF0F8644), false));
-    meetings.add(Meeting('Pollo', DateTime(2024, 2, 28, 15, 0, 0),
-        DateTime(2024, 2, 28, 19, 0, 0), const Color(0xFF440044), false));
-    return meetings;
-  } */
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,11 +57,12 @@ class _CalendarState extends State<Calendar> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/Agregar evento');
-          },
-          heroTag: 'Agregar',
-          child: const Icon(Icons.add)),
+        onPressed: () {
+          Navigator.pushNamed(context, '/Agregar evento');
+        },
+        heroTag: 'Agregar',
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }

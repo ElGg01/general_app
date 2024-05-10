@@ -36,15 +36,19 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Página Principal'),
         backgroundColor: Colors.pinkAccent,
         titleTextStyle: const TextStyle(
-            color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
+          color: Colors.white,
+          fontSize: 28,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       body: Center(
         child: Column(
           children: [
             const SizedBox(height: 20),
-            Text(_mensaje,
-                style:
-                    const TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
+            Text(
+              _mensaje,
+              style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            ),
           ],
         ),
       ),

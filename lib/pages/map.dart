@@ -54,33 +54,45 @@ class _MapState extends State<Map> {
         title: const Text('Mapa'),
         backgroundColor: Colors.green,
         titleTextStyle: const TextStyle(
-            color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
+          color: Colors.white,
+          fontSize: 28,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            'Latitud:',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
-          ),
-          Text(latitud, style: const TextStyle(fontSize: 32)),
-          const Text(
-            'Longitud:',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
-          ),
-          Text(longitud, style: const TextStyle(fontSize: 32)),
-          const SizedBox(height: 20),
-          MaterialButton(
-            onPressed: () {
-              botonPresionado();
-            },
-            color: Colors.amberAccent,
-            child:
-                const Text('Obtener ubicacion', style: TextStyle(fontSize: 16)),
-          )
-        ],
-      )),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Latitud:',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+            ),
+            Text(
+              latitud,
+              style: const TextStyle(fontSize: 32),
+            ),
+            const Text(
+              'Longitud:',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+            ),
+            Text(
+              longitud,
+              style: const TextStyle(fontSize: 32),
+            ),
+            const SizedBox(height: 20),
+            MaterialButton(
+              onPressed: () {
+                botonPresionado();
+              },
+              color: Colors.amberAccent,
+              child: const Text(
+                'Obtener ubicacion',
+                style: TextStyle(fontSize: 16),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

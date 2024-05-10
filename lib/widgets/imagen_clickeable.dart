@@ -17,8 +17,6 @@ class ImagenClickeable extends StatefulWidget {
   State<ImagenClickeable> createState() => _ImagenClickeableState();
 }
 
-//HACER EN EL INITSTATE LA COMPROBACION DE SI ES HTTP O ASSETS
-
 class _ImagenClickeableState extends State<ImagenClickeable> {
   @override
   Widget build(BuildContext context) {

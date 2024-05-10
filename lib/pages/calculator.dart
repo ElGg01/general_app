@@ -11,16 +11,29 @@ class Calculator extends StatefulWidget {
 class _CalculatorState extends State<Calculator> {
   Widget calcButton(String text, Color bgColor, Color textColor) {
     return ElevatedButton(
-        onPressed: () {
-          calcular(text);
-        },
-        style: ButtonStyle(
-            shape: const MaterialStatePropertyAll(CircleBorder()),
-            backgroundColor: MaterialStatePropertyAll(bgColor),
-            padding: const MaterialStatePropertyAll(EdgeInsets.all(10)),
-            minimumSize: const MaterialStatePropertyAll(Size(70, 80)),
-            maximumSize: const MaterialStatePropertyAll(Size(70, 80))),
-        child: Text(text, style: TextStyle(fontSize: 18, color: textColor)));
+      onPressed: () {
+        calcular(text);
+      },
+      style: ButtonStyle(
+        shape: const MaterialStatePropertyAll(
+          CircleBorder(),
+        ),
+        backgroundColor: MaterialStatePropertyAll(bgColor),
+        padding: const MaterialStatePropertyAll(
+          EdgeInsets.all(10),
+        ),
+        minimumSize: const MaterialStatePropertyAll(
+          Size(70, 80),
+        ),
+        maximumSize: const MaterialStatePropertyAll(
+          Size(70, 80),
+        ),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(fontSize: 18, color: textColor),
+      ),
+    );
   }
 
   String numActualString = '0';
@@ -356,28 +369,30 @@ class _CalculatorState extends State<Calculator> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      //EN ESTE CHILD SOLO VA TEXT
-                      child: SizedBox(
-                          width: MediaQuery.of(context).size.width - 30,
-                          child: Scrollbar(
-                            //thumbVisibility: true,
-                            //trackVisibility: true,
-                            child: SingleChildScrollView(
-                              reverse: true,
-                              physics: const AlwaysScrollableScrollPhysics(),
-                              scrollDirection: Axis.horizontal,
-                              child: Text(
-                                //AGREGAR QUE EL SCROLL SE VAYA AL FINAL CUANDO SE BORRA UN NUMERO
-                                numActualString,
-                                style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 60,
-                                    fontWeight: FontWeight.bold),
-                                textAlign: TextAlign.left,
-                              ),
-                            ),
-                          )))
+                    padding: const EdgeInsets.all(10.0),
+                    //EN ESTE CHILD SOLO VA TEXT
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width - 30,
+                      child: Scrollbar(
+                        //thumbVisibility: true,
+                        //trackVisibility: true,
+                        child: SingleChildScrollView(
+                          reverse: true,
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          scrollDirection: Axis.horizontal,
+                          child: Text(
+                            //AGREGAR QUE EL SCROLL SE VAYA AL FINAL CUANDO SE BORRA UN NUMERO
+                            numActualString,
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 60,
+                                fontWeight: FontWeight.bold),
+                            textAlign: TextAlign.left,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
               const Divider(

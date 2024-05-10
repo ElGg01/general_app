@@ -67,7 +67,7 @@ class _CounterState extends State<Counter> {
                 '$_contador',
                 style:
                     const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              )
+              ),
             ],
           ),
         ),
@@ -88,7 +88,7 @@ class _CounterState extends State<Counter> {
               tooltip: 'Decrementa el contador',
               backgroundColor: Colors.redAccent,
               child: const Icon(Icons.remove),
-            )
+            ),
           ],
         ));
   }

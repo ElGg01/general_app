@@ -72,16 +72,34 @@ class _AppState extends State<App> {
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Inicio'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.numbers), label: 'Contador'),
+              icon: Icon(Icons.home),
+              label: 'Inicio',
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.calculate), label: 'Calculadora'),
-            BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Mapa'),
+              icon: Icon(Icons.numbers),
+              label: 'Contador',
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.calendar_month), label: 'Calendario'),
-            BottomNavigationBarItem(icon: Icon(Icons.image), label: 'Imagenes'),
-            BottomNavigationBarItem(icon: Icon(Icons.login), label: 'Ingresa'),
+              icon: Icon(Icons.calculate),
+              label: 'Calculadora',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.map),
+              label: 'Mapa',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_month),
+              label: 'Calendario',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.image),
+              label: 'Imagenes',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.login),
+              label: 'Ingresa',
+            ),
           ],
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,

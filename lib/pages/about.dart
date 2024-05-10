@@ -24,19 +24,7 @@ class _AboutState extends State<About> {
               padding: const EdgeInsets.all(10),
               alignment: Alignment.center,
               child: const Text(
-                "Aplicación General desarrollada por:",
-                style: TextStyle(
-                  fontSize: 18,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            Image.asset("assets/NewLogo.png"),
-            Container(
-              padding: const EdgeInsets.all(10),
-              alignment: Alignment.center,
-              child: const Text(
-                "Julio César Negrete Gutiérrez",
+                "APLICACIÓN GENERAL",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
@@ -44,6 +32,7 @@ class _AboutState extends State<About> {
                 textAlign: TextAlign.center,
               ),
             ),
+            const Divider(),
             Container(
               padding: const EdgeInsets.all(10),
               alignment: Alignment.center,

@@ -28,7 +28,6 @@ class _AddEventState extends State<AddEvent> {
   final TextEditingController _nombreEvento = TextEditingController();
   final TextEditingController _inicioEvento = TextEditingController();
   final TextEditingController _finEvento = TextEditingController();
-  //final TextEditingController _colorEvento = TextEditingController();
 
   @override
   void initState() {
@@ -41,11 +40,6 @@ class _AddEventState extends State<AddEvent> {
     DateTime fin = fechaFinal;
     int color = currentColor.value;
 
-/*     Timestamp inicioTimeStamp =
-        Timestamp.fromMillisecondsSinceEpoch(inicio.millisecondsSinceEpoch);
-    Timestamp finalTimeStamp =
-        Timestamp.fromMillisecondsSinceEpoch(fin.millisecondsSinceEpoch); */
-
     Map<String, dynamic> datos = {
       'Nombre': nombre,
       'Inicio': inicio,
@@ -55,37 +49,6 @@ class _AddEventState extends State<AddEvent> {
 
     await db.collection('calendario').doc(nombre).set(datos);
   }
-
-  /* final TextEditingController _nombreTec = TextEditingController();
-  final TextEditingController _inicioTec = TextEditingController();
-  TextEditingController _finTec = TextEditingController();
-  TextEditingController _colorTec = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  Future<void> _cargarDatos() async {
-    String nombre = _nombreTec.text;
-    DateTime inicio = DateTime.parse(_inicioTec.text);
-    Timestamp fin =
-        Timestamp.fromDate(DateTime.parse(_finTec.text)); //Solo datetime
-    int color = int.parse(_colorTec.text);
-
-    //No es TEC es DT
-    final inicio = Timestamp(_inicioTec.milisecondsSinceEpoch / 1000, 0);
-    final inicio = Timestamp(_finTec.milisecondsSinceEpoch / 1000, 0);
-
-    Map<String, dynamic> datos = {
-      'Nombre': nombre,
-      'Inicio': inicio,
-      'Fin': fin,
-      'Color': color
-    };
-
-    await db.collection('calendario').doc(nombre).set(datos);
-  } */
 
   @override
   Widget build(BuildContext context) {
@@ -192,17 +155,17 @@ class _AddEventState extends State<AddEvent> {
                     ],
                   ),
                   ElevatedButton(
-                      onPressed: () {
-                        _cargarDatos();
-                        //Navigator.pop(context);
-                        Navigator.popAndPushNamed(context, "/");
-                        //Navigator.pushReplacementNamed(context, "/");
-                        /* Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const App())); */
-                      },
-                      child: const Text('Agregar'))
+                    onPressed: () {
+                      _cargarDatos();
+                      if (!context.mounted) return;
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        '/',
+                        (route) => false,
+                      );
+                    },
+                    child: const Text('Agregar'),
+                  ),
                 ],
               ),
             )
