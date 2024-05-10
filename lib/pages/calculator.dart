@@ -337,114 +337,116 @@ class _CalculatorState extends State<Calculator> {
         titleTextStyle: const TextStyle(
             color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text(
-                  preview,
-                  style: const TextStyle(color: Colors.white, fontSize: 16),
-                ),
-              )
-            ]),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 5),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                 Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    //EN ESTE CHILD SOLO VA TEXT
-                    child: SizedBox(
-                        width: MediaQuery.of(context).size.width - 30,
-                        child: Scrollbar(
-                          //thumbVisibility: true,
-                          //trackVisibility: true,
-                          child: SingleChildScrollView(
-                            reverse: true,
-                            physics: const AlwaysScrollableScrollPhysics(),
-                            scrollDirection: Axis.horizontal,
-                            child: Text(
-                              //AGREGAR QUE EL SCROLL SE VAYA AL FINAL CUANDO SE BORRA UN NUMERO
-                              numActualString,
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 60,
-                                  fontWeight: FontWeight.bold),
-                              textAlign: TextAlign.left,
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    preview,
+                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                )
+              ]),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      //EN ESTE CHILD SOLO VA TEXT
+                      child: SizedBox(
+                          width: MediaQuery.of(context).size.width - 30,
+                          child: Scrollbar(
+                            //thumbVisibility: true,
+                            //trackVisibility: true,
+                            child: SingleChildScrollView(
+                              reverse: true,
+                              physics: const AlwaysScrollableScrollPhysics(),
+                              scrollDirection: Axis.horizontal,
+                              child: Text(
+                                //AGREGAR QUE EL SCROLL SE VAYA AL FINAL CUANDO SE BORRA UN NUMERO
+                                numActualString,
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 60,
+                                    fontWeight: FontWeight.bold),
+                                textAlign: TextAlign.left,
+                              ),
                             ),
-                          ),
-                        )))
-              ],
-            ),
-            const Divider(
-              color: Colors.grey, // Color de la línea divisora
-              thickness: 2, // Grosor de la línea divisora
-              height: 60, // Altura de la línea divisora
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                calcButton('AC', Colors.deepPurple, Colors.white),
-                calcButton('e', Colors.deepPurple, Colors.white),
-                calcButton('<-', Colors.deepPurple, Colors.white),
-                calcButton('/', Colors.redAccent, Colors.white),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                calcButton('7', Colors.blueGrey, Colors.white),
-                calcButton('8', Colors.blueGrey, Colors.white),
-                calcButton('9', Colors.blueGrey, Colors.white),
-                calcButton('*', Colors.redAccent, Colors.white),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                calcButton('4', Colors.blueGrey, Colors.white),
-                calcButton('5', Colors.blueGrey, Colors.white),
-                calcButton('6', Colors.blueGrey, Colors.white),
-                calcButton('-', Colors.redAccent, Colors.white),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                calcButton('1', Colors.blueGrey, Colors.white),
-                calcButton('2', Colors.blueGrey, Colors.white),
-                calcButton('3', Colors.blueGrey, Colors.white),
-                calcButton('+', Colors.redAccent, Colors.white),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                calcButton('π', Colors.deepPurple, Colors.white),
-                calcButton('0', Colors.blueGrey, Colors.white),
-                calcButton('.', Colors.deepPurple, Colors.white),
-                calcButton('=', Colors.yellowAccent, Colors.black),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-          ],
+                          )))
+                ],
+              ),
+              const Divider(
+                color: Colors.grey, // Color de la línea divisora
+                thickness: 2, // Grosor de la línea divisora
+                height: 60, // Altura de la línea divisora
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  calcButton('AC', Colors.deepPurple, Colors.white),
+                  calcButton('e', Colors.deepPurple, Colors.white),
+                  calcButton('<-', Colors.deepPurple, Colors.white),
+                  calcButton('/', Colors.redAccent, Colors.white),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  calcButton('7', Colors.blueGrey, Colors.white),
+                  calcButton('8', Colors.blueGrey, Colors.white),
+                  calcButton('9', Colors.blueGrey, Colors.white),
+                  calcButton('*', Colors.redAccent, Colors.white),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  calcButton('4', Colors.blueGrey, Colors.white),
+                  calcButton('5', Colors.blueGrey, Colors.white),
+                  calcButton('6', Colors.blueGrey, Colors.white),
+                  calcButton('-', Colors.redAccent, Colors.white),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  calcButton('1', Colors.blueGrey, Colors.white),
+                  calcButton('2', Colors.blueGrey, Colors.white),
+                  calcButton('3', Colors.blueGrey, Colors.white),
+                  calcButton('+', Colors.redAccent, Colors.white),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  calcButton('π', Colors.deepPurple, Colors.white),
+                  calcButton('0', Colors.blueGrey, Colors.white),
+                  calcButton('.', Colors.deepPurple, Colors.white),
+                  calcButton('=', Colors.yellowAccent, Colors.black),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+            ],
+          ),
         ),
       ),
       backgroundColor: Colors.black,
